@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="container" >
+        <h1>Actualizar</h1>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nombre Destinatario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let destinatario of destinatarios">
+              <td>{{destinatario.nombre}}</td>
+              <td><button class="btn btn-warning" (click)="getDestinatario(destinatario.id)">Seleccionar</button></td>
+            </tr>
+          </tbody>
+        </table>       
+    </div>
+    <div class="container">
+        <form #form="ngForm" (ngSubmit)="crearTransferencia(form)">
+            <div class="mb-1 row">
+                <label for="Nombre" class="alineacion col-sm-1 col-form-label">Nombre:</label>
+                <div class="col-sm-4">
+                  <input ngModel name="Nombre"  type="text" readonly class="form-control-plaintext" id="Nombre">
+                </div>
+            </div>
+            <div class="mb-1 row">
+                <label for="Correo" class="alineacion col-sm-1 col-form-label">Correo:</label>
+                <div class="col-sm-4">
+                  <input ngModel name="Correo"  type="text" readonly class="form-control-plaintext" id="Correo">
+                </div>
+            </div>
+            <div class="mb-1 row">
+                <label for="Banco" class="alineacion col-sm-1 col-form-label">Banco:</label>
+                <div class="col-sm-4">
+                  <input ngModel name="Banco" type="text" readonly class="form-control-plaintext" id="Banco">
+                </div>
+            </div>
+            <div class="mb-1 row">
+                <label for="TipoCuenta" class="tipoCuenta col-sm-1 col-form-label">Tipo de cuenta:</label>
+                <div class="inputTipoCuenta col-sm-4">
+                  <input ngModel name="TipoCuenta" type="text" readonly class="form-control-plaintext" id="TipoCuenta">
+                </div>
+            </div>
+            <div class="mb-3 row d-none">
+              <div class="col-sm-4">
+                <input type="Text" ngModel name="Rut" class="form-control" id="Rut" placeholder="Rut">
+              </div>
+          </div>
+            <div class="mb-3 row">
+                <label for="Monto" class="col-sm-1 col-form-label">Monto:</label>
+                <div class="col-sm-4">
+                  <input type="Text" ngModel name="Monto" class="form-control" id="Monto" placeholder="Monto">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary botonTransferir">Transferir</button>
+        </form>
+    </div>
+</div>
+<script>
+angular.module('main',[]).controller('mainController', function($scope){
+  $scope.onEditChangeResult = "";
+
+  $scope.seleccionarDestinatario = function(){
+    $scope.onEditChangeResult = "the value is: '"+$scope.listaDestinatarios+"'"
+  }
+})
+</script>

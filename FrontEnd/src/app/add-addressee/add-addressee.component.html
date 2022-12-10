@@ -1,0 +1,101 @@
+<form
+  action=""
+  (ngSubmit)="crearDestinatario(form)"
+  #form="ngForm"
+  class="col-lg-6 offset-lg-3"
+>
+  <h1 class="Titulo">Nuevo Destinatario</h1>
+  <div class="container d-flex">
+    <div class="container">
+      <div class="mb-3 justify-content-center">
+        <label for="exampleInputRut" class="form-label">Rut</label>
+        <input
+          type="text"
+          class="form-control"
+          ngModel
+          name="Rut"
+          id="exampleInputRut"
+          aria-describedby="rutHelp"
+        />
+      </div>
+      <div class="mb-3 justify-content-center">
+        <label for="exampleInputCorreo" class="form-label">Correo</label>
+        <input
+          type="email"
+          class="form-control"
+          ngModel
+          name="Correo"
+          id="exampleInputCorreo"
+        />
+      </div>
+      <div class="mb-3 justify-content-center">
+        <label for="exampleInputCorreo" class="form-label">Banco</label>
+        <select
+          class="form-select"
+          name="Banco"
+          ngModel
+          aria-label="Default select example"
+        >
+          <option selected>Seleccionar banco</option>
+          <option *ngFor="let banco of bancos" value="{{ banco.nombre_banco }}">
+            {{ banco.nombre_banco }}
+          </option>
+        </select>
+      </div>
+      <div class="mb-3 justify-content-center">
+        <label for="exampleInputNumeroCuenta" class="form-label"
+          >Numero de cuenta</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          ngModel
+          name="NumeroCuenta"
+          id="exampleInputNumeroCuenta"
+        />
+      </div>
+    </div>
+    <div class="container">
+      <div class="mb-3 justify-content-center">
+        <label for="exampleInputNombre" class="form-label">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          ngModel
+          name="Nombre"
+          id="exampleInputNombre"
+          aria-describedby="nombreHelp"
+        />
+      </div>
+      <div class="mb-3 justify-content-center">
+        <label for="exampleInputTelefono" class="form-label">Telefono</label>
+        <input
+          type="number"
+          class="form-control"
+          ngModel
+          name="Telefono"
+          id="exampleInputTelefono"
+        />
+      </div>
+      <div class="mb-3 justify-content-center">
+        <label for="exampleInputTipoCuenta" class="form-label"
+          >Tipo de cuenta</label
+        >
+        <select
+          class="form-select"
+          ngModel
+          name="TipoCuenta"
+          aria-label="Default select example"
+        >
+          <option selected>Seleccionar cuenta</option>
+          <option value="Cuenta Vista">Cuenta Vista</option>
+          <option value="Cuenta Corriente">Cuenta Corriente</option>
+          <option value="Chequera Electronica">Chequera Electronica</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary botonAgregar">
+    Agregar
+  </button>
+</form>

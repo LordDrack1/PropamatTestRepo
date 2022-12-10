@@ -1,0 +1,16 @@
+.tipoCuenta{
+    width: 10.1%;
+    padding-right: 0;
+}
+.inputTipoCuenta{
+    width: 10.1%;
+    padding-right: 0;
+}
+
+.alineacion{
+    margin-right: 1.8%;
+}
+.botonTransferir{
+    margin-left: 28%;
+    padding: 16px 256px;
+}
